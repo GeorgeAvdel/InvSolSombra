@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    
+    --header-underline: #000;
+    --btn-color: #fdfdfd;/* button color*/
+    --btn-bg: #000;/* button bg color*/
+
+    --primary-text-color: #242524fd;
+    --input-border-color: #000;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+}
+
+.khula-font {
+    font-family: "Khula", sans-serif;
+    font-style: normal;
+}
+
+
+header {
+    background-color: transparent;
+    color: #fff;
+    z-index: 50;
+    position: relative;
+}
+
+
+header > .collapsible-header{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    background-color: inherit;
+    place-content: center;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.animated-collapse{
+    transition: width 0.3s ease;
+}
+
+.header-links {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: fit-content;
+    border-radius: 25px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header-links:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--header-underline);
+    transition: width 0.6s ease 0s, left 0.6s ease 0s;
+    width: 0;
+  }
+
+.header-links:hover:after {
+    width: 100%; 
+    left: 0; 
+}
+
+.header-white-bg{
+    color: #000;
+}
+
+
+q {
+    color: #192650;
+    quotes: none;
+}
+
+q::before {
+    content: "“"; /* Open quote */
+    color: #192650; 
+    font-size: xx-large; 
+    font-family: Revalia;
+}
+
+q::after {
+    content: "”"; /* Close quote */
+    color: #192650; 
+    font-size: xx-large; 
+    font-family: Revalia;
+}
+
+
+.overlay-gradient{
+    background: #000;
+    background: linear-gradient(83deg, #0b0b0ba2 10%, rgba(0, 0, 0, 0.572) 54%, rgba(211,174,56,0) 75%, #263a4aa2 97%);
+}
+
+.primary-text-color{
+    color: var(--primary-text-color);
+}
+
+.btn{
+    padding: 10px 15px;
+    width: max-content;
+    color: var(--btn-color);
+    background-color: var(--btn-bg);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.input, .input-light{
+    padding: 10px 15px;
+    outline: none;
+    min-width: 100px;
+    border: 2px solid #929292;
+    transition: border 0.3s;
+    color: #000;
+    background-color: transparent;
+}
+
+.input-light{
+    color: #fff;
+    border: 2px solid #f0e8e8;
+}
+
+.input-light:active, .input-light:focus, .input-light:focus-within{
+    border: 2px solid #eaeaeafd;
+}
+
+.input:active, .input:focus, .input:focus-within{
+    border: 2px solid var(--input-border-color);
+}
+
+.slides {
+    display: none;
+    position: relative;
+    height: 100%;
+}
+
+/* Navigation dots styling */
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dots-container .active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+
+.footer-link{
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: fit-content;
+    color: #fff;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-toggle {
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    color: #fff;
+    background-color: #000000;
+    border: 1px solid #f2f2f2;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    left: 0px;
+    top: 105%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 8px 12px;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #fff;
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: #444;
+}
+
+/* Mostrar menú al hacer hover o focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.review-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.review-slide {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+.stars {
+    display: inline-block;
+    font-size: 40px;
+    cursor: pointer;
+}
+.stars .star {
+    color: #ccc;
+    transition: color 0.2s;
+}
+.stars .star:hover,
+.stars .star.active {
+    color: gold;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media not all and (min-width: 1024px) {
+    header .collapsible-header {
+        position: absolute;
+        right: 0px;
+        flex-direction: column;
+        opacity: 0;
+        height: 100vh;
+        height: 100dvh;
+        width: 0vw;
+        justify-content: space-between;
+        padding: 5px;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        place-items: end;
+        background-color: #171917;
+        color: white;
+        overflow-y: scroll;
+        box-shadow: 2px 0px 5px #000;
+    }
+
+    .header-links{
+        color: white;
+    }
+    
+    .overlay-gradient{
+        background: unset;
+        background: unset;
+    }
+
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.carousel-nav {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 15;
+}
+
+.carousel-nav:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-indicators {
+    z-index: 15;
+    bottom: 30px;
+    gap: 8px;
+}
+
+.carousel-dot {
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-dot.active {
+    background-color: rgba(255, 255, 255, 1) !important;
+    transform: scale(1.2);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+/* Menú principal y desplegables */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  position: relative;
+}
+
+
+/* Botón hamburguesa */
+#collapse-btn {
+  background: none;
+  border: none;
+  color: #fff !important;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  z-index: 1000;
+  position: relative;
+}
+
+#collapse-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Asegurar que el botón hamburguesa sea visible en móvil */
+@media (max-width: 1024px) {
+  #collapse-btn {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Menú móvil: vertical, fondo sólido y visible */
+@media (max-width: 1024px) {
+  .collapsible-header {
+    position: fixed !important;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    background: #222;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    z-index: 1200 !important;
+    padding: 32px 0 0 0;
+    display: none;
+    overflow-y: auto;
+  }
+  .collapsible-header.open {
+    display: flex !important;
+  }
+  .header-links,
+  .dropdown-toggle {
+    color: #fff !important;
+    width: 100%;
+    text-align: left;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+  }
+  .dropdown-menu {
+    position: static !important;
+    background: #333;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+    width: 100%;
+  }
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+  .tw-flex.tw-w-max.tw-place-items-center.tw-gap-3 {
+    margin-bottom: 24px;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 24px;
+  }
+  .tw-flex.tw-place-items-center.tw-gap-5 {
+    margin-top: 24px;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 24px;
+  }
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 768px) {
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-indicators {
+        bottom: 20px;
+        gap: 6px;
+    }
+    
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-indicators {
+        gap: 4px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Asegurar que el header y los dropdown estén siempre por encima del hero/carrusel */
+header {
+  z-index: 50 !important;
+  position: relative;
+}
+
+header, nav, .collapsible-header {
+  overflow: visible !important;
+}
+
+.carrusel-scroll-snap {
+  z-index: 1 !important;
+}

@@ -1,0 +1,150 @@
+<style>
+.carrusel-scroll-snap {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+.carrusel-scroll-snap::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.carrusel-item-snap {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  position: relative;
+}
+.carrusel-item-snap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.carrusel-texto {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  width: max-content;
+  max-width: 90%;
+}
+.carrusel-item-snap.active .carrusel-texto {
+  opacity: 1;
+}
+.carrusel-indicadores {
+  text-align: center;
+  margin-top: 10px;
+}
+.carrusel-indicadores button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 4px;
+  background: #bbb;
+  cursor: pointer;
+}
+.carrusel-indicadores button.active {
+  background: #333;
+}
+</style>
+
+<div class="carrusel-scroll-snap" id="carruselSnap">
+  <div class="carrusel-item-snap">
+    <img src="images/Carrusel/Carrusel1.jpg" alt="Carrusel 1">
+    <div class="carrusel-texto"></div>
+  </div>
+  <div class="carrusel-item-snap">
+    <img src="images/Carrusel/Carrusel2.jpg" alt="Carrusel 2">
+    <div class="carrusel-texto"></div>
+  </div>
+  <div class="carrusel-item-snap">
+    <img src="images/Carrusel/Carrusel3.jpg" alt="Carrusel 3">
+    <div class="carrusel-texto"></div>
+  </div>
+  <div class="carrusel-item-snap">
+    <img src="images/Carrusel/Carrusel4.jpg" alt="Carrusel 4">
+    <div class="carrusel-texto"></div>
+  </div>
+  <div class="carrusel-item-snap">
+    <img src="images/Carrusel/Carrusel5.jpg" alt="Carrusel 5">
+    <div class="carrusel-texto"></div>
+  </div>
+</div>
+<div class="carrusel-indicadores">
+  <button onclick="snapTo(0)" class="active"></button>
+  <button onclick="snapTo(1)"></button>
+  <button onclick="snapTo(2)"></button>
+  <button onclick="snapTo(3)"></button>
+  <button onclick="snapTo(4)"></button>
+</div>
+<script>
+const carrusel = document.getElementById('carruselSnap');
+const buttons = document.querySelectorAll('.carrusel-indicadores button');
+const textos = [
+  "Damos estilos a sus ideas",
+  "20 años recubriendo a Venezuela",
+  "Innovadores en formas y estilos",
+  "",
+  ""
+];
+let currentIdx = 0;
+let autoInterval = null;
+
+// Asignar textos dinámicamente
+document.querySelectorAll('.carrusel-texto').forEach((el, idx) => {
+  el.textContent = textos[idx] || "";
+});
+
+function updateActiveSlide(idx) {
+  document.querySelectorAll('.carrusel-item-snap').forEach((item, i) => {
+    item.classList.toggle('active', i === idx);
+  });
+}
+
+function snapTo(idx) {
+  const item = carrusel.children[idx];
+  item.scrollIntoView({behavior: 'smooth', inline: 'center'});
+  buttons.forEach(btn => btn.classList.remove('active'));
+  buttons[idx].classList.add('active');
+  currentIdx = idx;
+  updateActiveSlide(idx);
+}
+
+function autoRotate() {
+  autoInterval = setInterval(() => {
+    currentIdx = (currentIdx + 1) % carrusel.children.length;
+    snapTo(currentIdx);
+  }, 3000);
+}
+
+// Actualiza el indicador al hacer scroll manual
+carrusel.addEventListener('scroll', () => {
+  const scrollLeft = carrusel.scrollLeft;
+  const width = carrusel.offsetWidth;
+  const idx = Math.round(scrollLeft / width);
+  buttons.forEach(btn => btn.classList.remove('active'));
+  if (buttons[idx]) buttons[idx].classList.add('active');
+  currentIdx = idx;
+  updateActiveSlide(idx);
+});
+
+// Detener rotación automática al interactuar manualmente
+buttons.forEach((btn, idx) => {
+  btn.addEventListener('click', () => {
+    clearInterval(autoInterval);
+    snapTo(idx);
+    autoRotate();
+  });
+});
+
+snapTo(0);
+</script>

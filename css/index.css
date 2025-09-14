@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    
+    --header-underline: #000;
+    --btn-color: #fdfdfd;/* button color*/
+    --btn-bg: #000;/* button bg color*/
+
+    --primary-text-color: #242524fd;
+    --input-border-color: #000;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+}
+
+.khula-font {
+    font-family: "Khula", sans-serif;
+    font-style: normal;
+}
+
+
+.animated-collapse{
+    transition: width 0.3s ease;
+}
+
+.header-links {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: fit-content;
+    border-radius: 25px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header-links:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--header-underline);
+    transition: width 0.6s ease 0s, left 0.6s ease 0s;
+    width: 0;
+  }
+
+.header-links:hover:after {
+    width: 100%; 
+    left: 0; 
+}
+
+.header-white-bg{
+    color: #000 !important;
+}
+
+/* Asegurar que los dropdowns mantengan el color correcto */
+.dropdown-toggle.header-white-bg {
+    color: #000 !important;
+}
+
+.dropdown-toggle.header-white-bg .bi {
+    color: #000 !important;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 0 !important; /* Remover padding superior del body */
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+}
+
+/* Prevenir scroll cuando el menú móvil está abierto */
+body.menu-open {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+}
+
+q {
+    color: #192650;
+    quotes: none;
+}
+
+q::before {
+    content: "“"; /* Open quote */
+    color: #192650; 
+    font-size: xx-large; 
+    font-family: Revalia;
+}
+
+q::after {
+    content: "”"; /* Close quote */
+    color: #192650; 
+    font-size: xx-large; 
+    font-family: Revalia;
+}
+
+
+.overlay-gradient{
+    background: #000;
+    background: linear-gradient(83deg, #0b0b0ba2 10%, rgba(0, 0, 0, 0.572) 54%, rgba(211,174,56,0) 75%, #263a4aa2 97%);
+}
+
+.primary-text-color{
+    color: var(--primary-text-color);
+}
+
+.btn{
+    padding: 10px 15px;
+    width: max-content;
+    color: var(--btn-color);
+    background-color: var(--btn-bg);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.input, .input-light{
+    padding: 10px 15px;
+    outline: none;
+    min-width: 100px;
+    border: 2px solid #929292;
+    transition: border 0.3s;
+    color: #000;
+    background-color: transparent;
+}
+
+.input-light{
+    color: #fff;
+    border: 2px solid #f0e8e8;
+}
+
+.input-light:active, .input-light:focus, .input-light:focus-within{
+    border: 2px solid #eaeaeafd;
+}
+
+.input:active, .input:focus, .input:focus-within{
+    border: 2px solid var(--input-border-color);
+}
+
+.slides {
+    display: none;
+    position: relative;
+    height: 100%;
+}
+
+/* Navigation dots styling */
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dots-container .active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+
+.footer-link{
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: fit-content;
+    color: #fff;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-toggle {
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 10001; /* Más alto que el header */
+    color: #fff;
+    background-color: #000000;
+    border: 1px solid #f2f2f2;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    left: 0px;
+    top: 105%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    min-width: 180px;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 8px 12px;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #fff;
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: #444;
+}
+
+/* Mostrar menú al hacer hover o focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.review-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.review-slide {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+.stars {
+    display: inline-block;
+    font-size: 40px;
+    cursor: pointer;
+}
+.stars .star {
+    color: #ccc;
+    transition: color 0.2s;
+}
+.stars .star:hover,
+.stars .star.active {
+    color: gold;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.carousel-nav {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 15;
+}
+
+.carousel-nav:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-indicators {
+    z-index: 15;
+    bottom: 30px;
+    gap: 8px;
+}
+
+.carousel-dot {
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-dot.active {
+    background-color: rgba(255, 255, 255, 1) !important;
+    transform: scale(1.2);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+/* Menú principal y desplegables */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.carrusel-scroll-snap {
+  z-index: 1 !important;
+  margin-top: 0 !important; /* Asegurar que no tenga margen superior */
+}
+
+/* Asegurar que el hero section esté debajo del header */
+#hero-section {
+  margin-top: 60px !important; /* Empujar contenido debajo del header */
+  padding-top: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Forzar que todo el contenido del hero esté por debajo */
+#hero-section * {
+  z-index: 1 !important;
+  position: relative !important;
+}
+
+/* Asegurar que todas las secciones estén por debajo del header */
+section {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Forzar que el carrusel esté por debajo del header */
+.carrusel-scroll-snap,
+.carrusel-item-snap,
+.carrusel-item-snap img,
+.carrusel-texto,
+.carrusel-indicadores,
+.carrusel-indicadores button {
+  z-index: 1 !important;
+  position: relative !important;
+}
+
+/* Asegurar que ningún elemento del carrusel tenga z-index alto */
+.carrusel-scroll-snap * {
+  z-index: 1 !important;
+}
+
+/* Forzar z-index bajo para todo el contenido de la página */
+main,
+main *,
+section,
+section *,
+.tw-relative,
+.tw-absolute {
+  z-index: 1 !important;
+}
+
+/* Overlay para oscurecer el contenido cuando el menú está abierto */
+.menu-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 9998 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.3s ease !important;
+}
+
+.menu-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Asegurar que el menú desktop funcione correctamente */
+
+
+#hero-image {
+    transform: scale(0.90); /* Este valor reducirá la imagen en un 60% */
+  }
+
+.image-grid {
+    display: grid; /* Activa el modo de cuadrícula */
+    grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+.image-grid img {
+    width: 100%; /* Las imágenes se ajustan al ancho de su contenedor */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Elimina cualquier espacio adicional */
+} 
+
+.image-item {
+    /* Define una proporción de 1:1 para que el contenedor sea siempre cuadrado. */
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+    /* Agrega un marco (borde). */
+    border: 1px solid #ddd;
+    /* Opcional: una sombra para un efecto de marco más suave. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+}
+
+.image-item img {
+    /* Asegura que la imagen llene el contenedor completamente. */
+    width: 100%;
+    height: 100%;
+    /* Recorta y centra la imagen para llenar el espacio sin distorsión. */
+    object-fit: cover;
+    display: block;
+} 
+
+/* Estilo del contenedor principal del modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Mantiene el modal en la misma posición, incluso si el usuario hace scroll */
+    z-index: 1000; /* Asegura que el modal esté por encima de todos los demás elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite scroll si la imagen es muy grande */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semitransparente */
+    justify-content: center; /* Centra el contenido horizontalmente (si usas flexbox) */
+    align-items: center; /* Centra el contenido verticalmente (si usas flexbox) */
+}
+
+/* Estilo para el contenedor de la imagen y el botón */
+.modal-content {
+    position: relative; /* Es necesario para posicionar el botón de cerrar */
+    display: flex; /* Centra la imagen dentro del contenedor */
+    max-width: 90%; /* Limita el ancho de la imagen */
+    max-height: 90%; /* Limita el alto de la imagen */
+}
+
+/* Estilo para la imagen dentro del modal */
+.modal-content img {
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+    margin: auto;
+}
+
+/* Estilo del botón de cerrar */
+.close-btn {
+    position: absolute; /* Posiciona el botón en relación al .modal-content */
+    top: -25px; /* Ajusta la posición para que esté fuera de la imagen */
+    right: -25px; /* Ajusta la posición para que esté fuera de la imagen */
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 0 10px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+/* ================================
+   HEADER GENERAL
+================================ */
+header {
+  z-index: 1000000 !important;   /* Header por encima del contenido */
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: rgba(0, 0, 0, 0.98) !important;
+  padding: 0 15px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Logo dentro del header */
+.tw-flex.tw-w-max.tw-place-items-center.tw-gap-3 {
+  position: absolute !important;
+  left: 15px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  z-index: 1000001 !important;
+}
+
+/* ================================
+   BOTÓN HAMBURGUESA
+================================ */
+#collapse-btn {
+  display: none; /* Oculto en desktop */
+  position: absolute !important;
+  right: 15px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 1.6rem !important;
+  color: #fff !important;
+  cursor: pointer;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  z-index: 1000001 !important; /* Siempre por encima del menú */
+}
+
+/* Mostrar botón en móvil */
+@media (max-width: 1023px) {
+  #collapse-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px !important;
+    height: 36px !important;
+    font-size: 1.6rem !important;
+  }
+}
+
+/* ================================
+   MENÚ MÓVIL
+================================ */
+
+/* Oculto por defecto en móvil */
+@media (max-width: 1023px) {
+  .collapsible-header {
+    display: none !important;
+    width: 100% !important;
+  }
+
+  /* Menú abierto: pantalla completa debajo del header */
+  .collapsible-header.open {
+    display: flex !important;
+    position: fixed !important;
+    top: 60px !important; /* espacio del header */
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 60px) !important;
+    background: rgba(0, 0, 0, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 2000000 !important; /* Encima del contenido, debajo del header */
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Estilos de los enlaces del menú móvil */
+  .header-links,
+  .dropdown-toggle {
+    color: #fff !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    text-align: center !important;
+    padding: 20px 24px !important;
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    margin-bottom: 8px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Submenús desplegables */
+  .dropdown-menu {
+    position: static !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 8px !important;
+    margin-top: 8px !important;
+    width: 100% !important;
+    display: none !important;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block !important;
+  }
+}
+/* ---------- Agregado por KIMI AI ---------- */
+/* ---------- SERVICIOS Y RESTAURACIONES ---------- */
+/* FUERZA BRUTA: imagen pequeña y sin discusión */
+#restoration-img {
+  width: 360px !important;   /* ajusta este valor hasta que se vea como la foto */
+  height: auto !important;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  #restoration-img {
+    width: 140px !important; /* un poco más pequeña en móvil */
+  }
+}

@@ -1,0 +1,37 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-container {
+    display: grid;
+    /* Define 4 columnas de igual tamaño. */
+    grid-template-columns: repeat(4, 1fr);
+    /* Espacio entre las filas y columnas. */
+    gap: 15px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.gallery-item {
+    /* Mantiene la proporción del contenedor. */
+    width: 100%;
+    /* Usa un aspecto de 1:1 para las imágenes cuadradas si lo deseas, o ajusta la altura. */
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    /* Asegura que la imagen llene el contenedor. */
+    width: 100%;
+    height: 100%;
+    /* Recorta y centra la imagen para llenar el espacio sin distorsión. */
+    object-fit: cover;
+    display: block;
+}
