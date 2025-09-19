@@ -26,16 +26,6 @@ html {
     transition: width 0.3s ease;
 }
 
-.header-links {
-    display: flex;
-    position: relative;
-    align-items: center;
-    min-width: fit-content;
-    border-radius: 25px;
-    padding: 5px 10px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
 .header-links:after {    
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -47,7 +37,7 @@ html {
     background: var(--header-underline);
     transition: width 0.6s ease 0s, left 0.6s ease 0s;
     width: 0;
-  }
+}
 
 .header-links:hover:after {
     width: 100%; 
@@ -211,9 +201,8 @@ q::after {
 }
 
 .dropdown-menu {
-    display: none;
     position: absolute;
-    z-index: 10001; /* Más alto que el header */
+    z-index: 10001;
     color: #fff;
     background-color: #000000;
     border: 1px solid #f2f2f2;
@@ -239,16 +228,6 @@ q::after {
     padding: 8px 20px;
     text-decoration: none;
     transition: background 0.2s;
-}
-
-.dropdown-menu a:hover {
-    background: #444;
-}
-
-/* Mostrar menú al hacer hover o focus */
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-    display: block;
 }
 
 .review-container {
@@ -298,352 +277,28 @@ q::after {
 }
 
 
-/* Carousel Styles */
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel-slide {
-    transition: opacity 0.7s ease-in-out;
-}
-
-.carousel-nav {
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 15;
-}
-
-.carousel-nav:hover {
-    background-color: rgba(255, 255, 255, 0.3) !important;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-indicators {
-    z-index: 15;
-    bottom: 30px;
-    gap: 8px;
-}
-
-.carousel-dot {
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 12px;
-    height: 12px;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.carousel-dot:hover {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    transform: scale(1.3);
-    border-color: rgba(255, 255, 255, 0.8);
-}
-
-.carousel-dot.active {
-    background-color: rgba(255, 255, 255, 1) !important;
-    transform: scale(1.2);
-    border-color: rgba(255, 255, 255, 1);
-}
-
-/* Menú principal y desplegables */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.menu > li {
-  position: relative;
-}
-
-.carrusel-scroll-snap {
-  z-index: 1 !important;
-  margin-top: 0 !important; /* Asegurar que no tenga margen superior */
-}
-
-/* Asegurar que el hero section esté debajo del header */
-#hero-section {
-  margin-top: 60px !important; /* Empujar contenido debajo del header */
-  padding-top: 0 !important;
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-/* Forzar que todo el contenido del hero esté por debajo */
-#hero-section * {
-  z-index: 1 !important;
-  position: relative !important;
-}
-
-/* Asegurar que todas las secciones estén por debajo del header */
-section {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-/* Forzar que el carrusel esté por debajo del header */
-.carrusel-scroll-snap,
-.carrusel-item-snap,
-.carrusel-item-snap img,
-.carrusel-texto,
-.carrusel-indicadores,
-.carrusel-indicadores button {
-  z-index: 1 !important;
-  position: relative !important;
-}
-
-/* Asegurar que ningún elemento del carrusel tenga z-index alto */
-.carrusel-scroll-snap * {
-  z-index: 1 !important;
-}
-
-/* Forzar z-index bajo para todo el contenido de la página */
-main,
-main *,
-section,
-section *,
-.tw-relative,
-.tw-absolute {
-  z-index: 1 !important;
-}
-
-/* Overlay para oscurecer el contenido cuando el menú está abierto */
-.menu-overlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-  z-index: 9998 !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: all 0.3s ease !important;
-}
-
-.menu-overlay.active {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Asegurar que el menú desktop funcione correctamente */
-
-
-#hero-image {
-    transform: scale(0.90); /* Este valor reducirá la imagen en un 60% */
-  }
-
-.image-grid {
-    display: grid; /* Activa el modo de cuadrícula */
-    grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas de igual tamaño */
-    gap: 20px; /* Espacio entre las imágenes */
-}
-
-.image-grid img {
-    width: 100%; /* Las imágenes se ajustan al ancho de su contenedor */
-    height: auto; /* Mantiene la proporción */
-    display: block; /* Elimina cualquier espacio adicional */
-} 
-
-.image-item {
-    /* Define una proporción de 1:1 para que el contenedor sea siempre cuadrado. */
-    aspect-ratio: 1 / 1; 
-    overflow: hidden;
-    /* Agrega un marco (borde). */
-    border: 1px solid #ddd;
-    /* Opcional: una sombra para un efecto de marco más suave. */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    border-radius: 8px; /* Bordes redondeados para el contenedor */
-}
-
-.image-item img {
-    /* Asegura que la imagen llene el contenedor completamente. */
-    width: 100%;
-    height: 100%;
-    /* Recorta y centra la imagen para llenar el espacio sin distorsión. */
-    object-fit: cover;
-    display: block;
-} 
-
-/* Estilo del contenedor principal del modal */
-.modal {
-    display: none; /* Oculta el modal por defecto */
-    position: fixed; /* Mantiene el modal en la misma posición, incluso si el usuario hace scroll */
-    z-index: 1000; /* Asegura que el modal esté por encima de todos los demás elementos */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Permite scroll si la imagen es muy grande */
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semitransparente */
-    justify-content: center; /* Centra el contenido horizontalmente (si usas flexbox) */
-    align-items: center; /* Centra el contenido verticalmente (si usas flexbox) */
-}
-
-/* Estilo para el contenedor de la imagen y el botón */
-.modal-content {
-    position: relative; /* Es necesario para posicionar el botón de cerrar */
-    display: flex; /* Centra la imagen dentro del contenedor */
-    max-width: 90%; /* Limita el ancho de la imagen */
-    max-height: 90%; /* Limita el alto de la imagen */
-}
-
-/* Estilo para la imagen dentro del modal */
-.modal-content img {
-    max-width: 100%;
-    max-height: 100vh;
-    display: block;
-    margin: auto;
-}
-
-/* Estilo del botón de cerrar */
-.close-btn {
-    position: absolute; /* Posiciona el botón en relación al .modal-content */
-    top: -25px; /* Ajusta la posición para que esté fuera de la imagen */
-    right: -25px; /* Ajusta la posición para que esté fuera de la imagen */
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #333;
-    border-radius: 50%;
-    padding: 0 10px;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #bbb;
-    text-decoration: none;
-}
-/* ================================
-   HEADER GENERAL
-================================ */
-header {
-  z-index: 1000000 !important;   /* Header por encima del contenido */
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 60px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  background-color: rgba(0, 0, 0, 0.98) !important;
-  padding: 0 15px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Logo dentro del header */
-.tw-flex.tw-w-max.tw-place-items-center.tw-gap-3 {
-  position: absolute !important;
-  left: 15px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  margin: 0 !important;
-  z-index: 1000001 !important;
-}
-
-/* ================================
-   BOTÓN HAMBURGUESA
-================================ */
-#collapse-btn {
-  display: none; /* Oculto en desktop */
-  position: absolute !important;
-  right: 15px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  font-size: 1.6rem !important;
-  color: #fff !important;
-  cursor: pointer;
-  padding: 10px !important;
-  border-radius: 8px !important;
-  background: rgba(255, 255, 255, 0.15) !important;
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  z-index: 1000001 !important; /* Siempre por encima del menú */
-}
-
-/* Mostrar botón en móvil */
-@media (max-width: 1023px) {
-  #collapse-btn {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 44px !important;
-    height: 36px !important;
-    font-size: 1.6rem !important;
-  }
-}
-
-/* ================================
-   MENÚ MÓVIL
-================================ */
-
-/* Reglas de estilo para el menú móvil */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transform: translateY(-100%);
-  z-index: 999;
-  opacity: 0;
-}
-
-/* Clase para mostrar el menú móvil */
-.mobile-menu.active {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Ocultar en escritorio */
-@media (min-width: 768px) {
-  .mobile-menu {
-    display: none;
-  }
-}
-
-/* Estilos para los enlaces del menú móvil */
-.mobile-menu a {
-  padding: 1rem 2rem;
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  text-align: center;
-  transition: background-color 0.2s;
-}
-
-.mobile-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Estilos para el carrusel */
+/* Estilos del carrusel */
 .carrusel-container {
-    display: flex;
-    overflow-x: hidden;
     position: relative;
     height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 .carrusel-item {
-    flex: 0 0 100%;
-    position: relative;
-    height: 100vh;
-    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.carrusel-item.active {
+    opacity: 1;
 }
 .carrusel-item img {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -702,9 +357,14 @@ header {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
 }
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Estilo para el contenedor de la imagen y el botón */
 .modal-content {
     margin: auto;
@@ -712,7 +372,7 @@ header {
     width: 80%;
     max-width: 700px;
     height: auto;
-    max-height: 80%;
+    max-height: 90vh;
 }
 .modal-content img {
     width: 100%;

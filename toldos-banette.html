@@ -17,154 +17,79 @@
     <meta property="og:image" content="" />
 
     <link rel="shortcut icon" href="./images/Logo/header_logo_2022Web.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="index.css" />
-    <script src="https://cdn.tailwindcss.com"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLpvm+9JvQjJ6g5s6zVpGg+Yg+i5A5z5g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+   <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/index.css">
+
 </head>
-
 <body class="bg-gray-100">
-
-    <header class="bg-gray-900 py-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6 flex justify-between items-center relative">
-            <a href="index.html" class="flex items-center space-x-2">
-                <img src="./images/Logo/header_logo_2022Web.png" alt="Logo de la empresa" class="h-12 w-auto" />
-                <div>
-                    <span class="text-white text-lg font-bold">INVERSIONES SOL Y SOMBRA</span>
-                    <p class="text-gray-400 text-sm">Persianas y Toldos</p>
-                </div>
-            </a>
-
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            
-            <nav class="hidden md:flex items-center space-x-6 text-white font-medium">
-                <a href="index.html" class="hover:text-yellow-400 transition-colors duration-200">Principal</a>
-                <a href="toldos-banette.html" class="hover:text-yellow-400 transition-colors duration-200">Banette</a>
-                <a href="toldos.html#capotinas" class="hover:text-yellow-400 transition-colors duration-200">Capotinas</a>
-                <a href="toldos.html#estructural" class="hover:text-yellow-400 transition-colors duration-200">Estructural</a>
-                <a href="toldos.html#extensibles" class="hover:text-yellow-400 transition-colors duration-200">Extensibles</a>
-                <a href="toldos.html#fijos" class="hover:text-yellow-400 transition-colors duration-200">Fijos</a>
-                <a href="toldos.html#tenso-estructura" class="hover:text-yellow-400 transition-colors duration-200">Tenso estructura</a>
-                <a href="#contacto" class="hover:text-yellow-400 transition-colors duration-200">Contacto</a>
-
-                <div class="social-icons ml-4 flex space-x-4 text-xl">
-                    <a href="https://www.facebook.com/solysombrave" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/solysombrave" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/584129511547" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </nav>
-        </div>
-
-        <nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-[72px] left-0 w-full bg-gray-900 shadow-lg z-50">
-            <a href="index.html" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Principal</a>
-            <a href="toldos-banette.html" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Banette</a>
-            <a href="toldos.html#capotinas" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Capotinas</a>
-            <a href="toldos.html#estructural" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Estructural</a>
-            <a href="toldos.html#extensibles" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Extensibles</a>
-            <a href="toldos.html#fijos" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Fijos</a>
-            <a href="toldos.html#tenso-estructura" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Tenso estructura</a>
-            <a href="#contacto" class="block py-3 px-6 text-white hover:bg-gray-800 transition-colors duration-200">Contacto</a>
-
-        </nav>
-    </header>
 
     <main class="min-h-screen">
         <section class="relative h-[60vh] w-full flex items-center justify-center bg-gray-800 text-white overflow-hidden">
             <div class="z-10 p-8 text-center">
-                <h1 class="text-5xl font-bold mb-4">Toldos Banette</h1>
-                <p class="text-xl">Descubre la elegancia y funcionalidad de nuestros toldos tipo Banette.</p>
+                <h1 class="text-5xl font-bold mb-4">Toldo Banette</h1>
             </div>
             <img src="./images/ToldosBanete/Banette_ID2.jpg" alt="Imagen de toldos Banette" class="absolute inset-0 h-full w-full object-cover opacity-50" />
         </section>
 
         <section class="bg-white py-12">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-semibold text-center mb-8">Nuestros 13 Modelos</h2>
                 <div id="image-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 1.png" alt="Toldo Banette Modelo 1" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 1</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 2.png" alt="Toldo Banette Modelo 2" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 2</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 3.jpg" alt="Toldo Banette Modelo 3" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 3</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 4.jpg" alt="Toldo Banette Modelo 4" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 4</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 5.jpg" alt="Toldo Banette Modelo 5" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 5</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 6.jpg" alt="Toldo Banette Modelo 6" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 6</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 7.jpg" alt="Toldo Banette Modelo 7" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 7</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 8.jpg" alt="Toldo Banette Modelo 8" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 8</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 9.jpg" alt="Toldo Banette Modelo 9" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 9</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 10.jpg" alt="Toldo Banette Modelo 10" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 10</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 11.jpg" alt="Toldo Banette Modelo 11" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 11</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 12.jpg" alt="Toldo Banette Modelo 12" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 12</h3>
-                        </div>
                     </div>
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
                         <img src="./images/ToldosBanete/Toldos Banette 13.jpg" alt="Toldo Banette Modelo 13" class="w-full h-48 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">Toldo Banette 13</h3>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -209,7 +134,6 @@
                     <div class="mt-4">
                         <h3 class="text-xl font-bold text-[#333] mb-2">Escríbenos</h3>
                         <p class="text-gray-700">ventas@solsombratoldos.com</p>
-                        <p class="text-gray-700">solysombra2000ca@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -255,7 +179,6 @@
                     <li>+58 0414-2871880</li>
                     <li>+58 0412-9511547</li>
                     <li>ventas@solsombratoldos.com</li>
-                    <li>solysombra2000ca@gmail.com</li>
                 </ul>
             </div>
         </div>
@@ -288,46 +211,10 @@
         <img class="modal-content" id="modal-image" src="" alt="">
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                menuIcon.classList.toggle('hidden');
-                closeIcon.classList.toggle('hidden');
-            });
-
-            // Lógica del modal
-            const modal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-            const closeButton = document.querySelector('.close-button');
-            const imageGallery = document.getElementById('image-gallery');
-
-            // Abrir el modal al hacer clic en cualquier imagen del contenedor
-            imageGallery.addEventListener('click', (e) => {
-                const clickedElement = e.target;
-                if (clickedElement.tagName === 'IMG') {
-                    modal.style.display = 'flex';
-                    modalImage.src = clickedElement.src;
-                }
-            });
-
-            // Cerrar el modal con el botón de cierre
-            closeButton.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            // Cerrar el modal al hacer clic fuera de la imagen
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <script src="scripts/load-header.js"></script>
+    <script src="scripts/index.js"></script>
+    <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+    <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmfli770e0023lj47ykvdd4pv'></zapier-interfaces-chatbot-embed>
+	
 </body>
 </html>
