@@ -3,4 +3,5 @@ fetch('components/header.html')
   .then(html => {
     // inserta el header justo después de <body>
     document.body.insertAdjacentHTML('afterbegin', html);
+    document.dispatchEvent(new CustomEvent('header:loaded'));
   });
