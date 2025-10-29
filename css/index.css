@@ -213,6 +213,32 @@ q::after {
   background: transparent;
   z-index: 10002;
 }
+
+/* Estilos para menú móvil */
+@media (max-width: 767px) {
+  #nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 1000;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  
+  .dropdown-menu {
+    position: static !important;
+    display: block !important;
+    box-shadow: none;
+    border: none;
+    margin-top: 0.5rem;
+  }
+  
+  .dropdown-menu::before {
+    display: none;
+  }
+}
 .dropdown-toggle {
     width: 100%;
     outline: none;

@@ -38,10 +38,15 @@ if (items.length) {
 }
 
 /* ---------- MENÚ HAMBURGUESA ---------- */
-document.addEventListener('DOMContentLoaded', () => {
+function initHamburgerMenu() {
   const btn  = document.getElementById('hamburger-button');
   const menu = document.getElementById('nav-menu');
   if (!btn || !menu) return;
+
+  // Ocultar el menú inicialmente en móviles
+  if (window.innerWidth < 768) {
+    menu.classList.add('hidden');
+  }
 
   btn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
@@ -50,11 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   menu.querySelectorAll('a').forEach(link =>
     link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
+      if (window.innerWidth < 768) {
+        menu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
     })
   );
-});
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', initHamburgerMenu);
+
+// Reinicializar cuando el header se cargue dinámicamente
+document.addEventListener('header:loaded', initHamburgerMenu);
 
 /* ---------- GALERÍA MODAL (se espera a que el header esté listo) ---------- */
 document.addEventListener('header:loaded', () => {
