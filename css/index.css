@@ -186,6 +186,33 @@ q::after {
   position: relative;
   display: inline-block;
 }
+/* Mejorar accesibilidad del dropdown - puente invisible */
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
+  z-index: 10000;
+}
+/* Mantener el menú visible cuando está sobre el dropdown o el menú */
+.dropdown:hover .dropdown-menu,
+.dropdown .dropdown-menu:hover {
+  display: block !important;
+}
+/* Área hover extendida en la parte superior del menú */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
+  z-index: 10002;
+}
 .dropdown-toggle {
     width: 100%;
     outline: none;

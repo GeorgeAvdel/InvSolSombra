@@ -35,6 +35,33 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
+        /* Mejorar accesibilidad del dropdown */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: transparent;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown .dropdown-menu:hover {
+            display: block;
+        }
+        /* Área hover extendida para facilitar el acceso */
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: transparent;
+        }
     </style>
     <link rel="stylesheet" href="./css/index.css">
 
@@ -58,11 +85,6 @@
             </div>
             <div class="carrusel-item">
                 <img src="images/Carrusel/Carrusel4.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1000x500/000000/FFFFFF?text=Carrusel+4';" alt="Carrusel 4" />
-                <div class="carrusel-texto"></div>
-            </div>
-            <div class="carrusel-item">
-                <img src="images/Carrusel/Carrusel5.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1000x500/000000/FFFFFF?text=Carrusel+5';" alt="Carrusel 5" />
-                <div class="carrusel-texto"></div>
             </div>
         </div>
         <div class="carrusel-indicadores">
@@ -70,7 +92,6 @@
             <button type="button" onclick="goToSlide(1)"></button>
             <button type="button" onclick="goToSlide(2)"></button>
             <button type="button" onclick="goToSlide(3)"></button>
-            <button type="button" onclick="goToSlide(4)"></button>
         </div>
     </div>
     
@@ -279,13 +300,13 @@
   <!-- texto + botón -->
   <div class="rounded-lg p-6 min-h-64 text-center">
     <p class="text-gray-600">
-      Tenemos la solución ideal para renovar la lona o vinil desgastada de su toldo, incluso realizamos el mantenimiento, limpieza, costura para dar una mejor apariencia y prolongar su vida útil.
+      Tenemos la solución ideal para renovar la lona o vinil desgastada de su toldo, realizamos el mantenimiento, limpieza, costura para dar una mejor apariencia y prolongar su vida útil.
     </p>
     <p class="mt-4 text-gray-600">
       A las sillas y tumbonas les realizamos el cambio de tejido; pintura electrostática luciendo como nuevas.
     </p>
     <p class="mt-4 text-gray-600">
-      Y a las sombrillas les sustituimos la lona rota, vieja, deteriorada o simplemente si desea cambiar de color para dar una apariencia diferente.
+      A las sombrillas les sustituimos la lona rota, vieja, deteriorada o simplemente si desea cambiar de color para dar una apariencia diferente.
     </p>
     <!-- botón que lleva a la página detalle -->
     <a href="restauraciones.html" class="inline-block mt-6 bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
@@ -362,11 +383,8 @@
         <div>
             <h3 class="text-lg font-semibold mb-4 text-center md:text-left">Recursos</h3>
             <ul class="text-sm space-y-2 text-center md:text-left">
-                <li><a href="#" class="hover:underline">Sobre nosotros</a></li>
-                <li><a href="#" class="hover:underline">Preguntas frecuentes</a></li>
-                <li><a href="#" class="hover:underline">Contáctanos</a></li>
-                <li><a href="#" class="hover:underline">Áreas de servicio</a></li>
-                <li><a href="#" class="hover:underline">Política de privacidad</a></li>
+                <li><a href="#" class="hover:underline">Sobre nosotros</a></li>                
+                <li><a href="#" class="hover:underline">Contáctanos</a></li>                
             </ul>
         </div>
 
