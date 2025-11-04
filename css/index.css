@@ -198,9 +198,126 @@ q::after {
   z-index: 10000;
 }
 /* Mantener el menú visible cuando está sobre el dropdown o el menú */
-.dropdown:hover .dropdown-menu,
-.dropdown .dropdown-menu:hover {
-  display: block !important;
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-menu,
+  .dropdown .dropdown-menu:hover {
+    display: block !important;
+  }
+  
+  /* Asegurar que el menú de navegación tenga espacio suficiente - ALTA ESPECIFICIDAD */
+  header nav .container #nav-menu,
+  nav .container #nav-menu,
+  #nav-menu {
+    min-width: 700px !important;
+    max-width: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Asegurar que todos los elementos del menú sean visibles en desktop - ALTA ESPECIFICIDAD */
+  header nav .container #nav-menu > a,
+  header nav .container #nav-menu > .dropdown,
+  #nav-menu > a,
+  #nav-menu > .dropdown {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    flex: 0 0 auto !important;
+  }
+  
+  /* Específico para el enlace de Contacto - MÁXIMA ESPECIFICIDAD */
+  header nav .container #nav-menu > a[href="#contacto"],
+  nav .container #nav-menu > a[href="#contacto"],
+  #nav-menu > a[href="#contacto"] {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10002 !important;
+    flex-shrink: 0 !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    min-width: fit-content !important;
+    margin-left: 0.75rem !important;
+    order: 3 !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Asegurar que el contenedor del header no corte el menú - ALTA ESPECIFICIDAD */
+  header.bg-black nav.bg-black .container.mx-auto,
+  header nav .container,
+  nav .container {
+    overflow: visible !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 1.5rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  
+  /* Asegurar que el nav no corte el menú */
+  header nav,
+  nav {
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  
+  /* Asegurar que el header no corte el menú */
+  header.bg-black,
+  header {
+    overflow: visible !important;
+    width: 100% !important;
+  }
+}
+
+/* Para pantallas más grandes, dar aún más espacio - ALTA ESPECIFICIDAD */
+@media (min-width: 1024px) {
+  header nav .container #nav-menu,
+  nav .container #nav-menu,
+  #nav-menu {
+    min-width: 750px !important;
+  }
+  
+  header nav .container,
+  nav .container {
+    max-width: 1600px !important;
+  }
+  
+  header nav .container .dropdown .dropdown-menu,
+  nav .container .dropdown .dropdown-menu,
+  .dropdown-menu {
+    min-width: 600px !important;
+    width: 600px !important;
+  }
+}
+
+/* Para pantallas muy grandes - ALTA ESPECIFICIDAD */
+@media (min-width: 1280px) {
+  header nav .container #nav-menu,
+  nav .container #nav-menu,
+  #nav-menu {
+    min-width: 800px !important;
+  }
+  
+  header nav .container .dropdown .dropdown-menu,
+  nav .container .dropdown .dropdown-menu,
+  .dropdown-menu {
+    min-width: 650px !important;
+    width: 650px !important;
+  }
 }
 /* Área hover extendida en la parte superior del menú */
 .dropdown-menu::before {
@@ -227,12 +344,49 @@ q::after {
     overflow-y: auto;
   }
   
+  #nav-menu.hidden {
+    display: none !important;
+  }
+  
+  #nav-menu:not(.hidden) {
+    display: flex !important;
+    flex-direction: column;
+  }
+  
+  /* Asegurar que todos los elementos del menú sean visibles */
+  #nav-menu:not(.hidden) > a,
+  #nav-menu:not(.hidden) > .dropdown {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+  
+  /* Específico para el enlace de Contacto en móvil */
+  #nav-menu:not(.hidden) > a[href="#contacto"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0.5rem;
+    order: 10 !important; /* Asegurar que aparezca al final */
+  }
+  
   .dropdown-menu {
     position: static !important;
-    display: block !important;
     box-shadow: none;
     border: none;
     margin-top: 0.5rem;
+  }
+  
+  /* El dropdown solo se muestra cuando tiene la clase 'open' en móviles */
+  #nav-menu:not(.hidden) .dropdown-menu {
+    display: none !important;
+  }
+  
+  #nav-menu:not(.hidden) .dropdown.open .dropdown-menu {
+    display: block !important;
   }
   
   .dropdown-menu::before {
@@ -265,9 +419,72 @@ q::after {
     left: 0px;
     top: 105%;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     min-width: 180px;
+    pointer-events: auto !important;
+}
+
+/* Asegurar que el dropdown tenga suficiente ancho en desktop - ALTA ESPECIFICIDAD */
+@media (min-width: 768px) {
+  header nav .container .dropdown .dropdown-menu,
+  nav .container .dropdown .dropdown-menu,
+  .dropdown .dropdown-menu,
+  .dropdown-menu {
+    min-width: 550px !important;
+    width: 550px !important;
+    max-width: none !important;
+  }
+  
+  header nav .container .dropdown .dropdown-menu .grid,
+  nav .container .dropdown .dropdown-menu .grid,
+  .dropdown-menu .grid,
+  .dropdown .dropdown-menu .grid {
+    width: 100% !important;
+    min-width: 550px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(200px, 1fr)) !important;
+    gap: 1.5rem !important;
+    grid-auto-flow: row !important;
+  }
+  
+  /* Asegurar que ambas columnas sean visibles - ALTA ESPECIFICIDAD */
+  header nav .container .dropdown .dropdown-menu .grid > div,
+  nav .container .dropdown .dropdown-menu .grid > div,
+  .dropdown-menu .grid > div,
+  .dropdown .dropdown-menu .grid > div {
+    min-width: 200px !important;
+    overflow: visible !important;
+    width: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+  
+  /* Específico para la segunda columna (Otros productos) - MÁXIMA ESPECIFICIDAD */
+  header nav .container .dropdown .dropdown-menu .grid > div:last-child,
+  nav .container .dropdown .dropdown-menu .grid > div:last-child,
+  .dropdown-menu .grid > div:last-child,
+  .dropdown .dropdown-menu .grid > div:last-child,
+  .dropdown-menu .grid > div:nth-child(2) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    min-width: 200px !important;
+    position: relative !important;
+    grid-column: 2 !important;
+  }
+  
+  /* Asegurar que la primera columna no ocupe todo el espacio */
+  header nav .container .dropdown .dropdown-menu .grid > div:first-child,
+  nav .container .dropdown .dropdown-menu .grid > div:first-child,
+  .dropdown-menu .grid > div:first-child {
+    grid-column: 1 !important;
+    width: 100% !important;
+    min-width: 200px !important;
+  }
 }
 
 .dropdown-menu li {

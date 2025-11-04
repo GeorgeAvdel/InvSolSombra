@@ -53,11 +53,27 @@ function initHamburgerMenu() {
     document.body.classList.toggle('overflow-hidden');
   });
 
+  // Control del dropdown de Productos en móvil
+  const dropdownButton = menu.querySelector('.dropdown button');
+  const dropdown = menu.querySelector('.dropdown');
+  
+  if (dropdownButton && dropdown) {
+    dropdownButton.addEventListener('click', (e) => {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      }
+    });
+  }
+
   menu.querySelectorAll('a').forEach(link =>
     link.addEventListener('click', () => {
       if (window.innerWidth < 768) {
         menu.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
+        // Cerrar el dropdown cuando se cierra el menú
+        if (dropdown) dropdown.classList.remove('open');
       }
     })
   );

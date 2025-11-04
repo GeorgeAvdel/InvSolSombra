@@ -1,0 +1,74 @@
+# ===========================================
+# CONFIGURACIÓN SMTP PARA ENVÍO DE EMAILS
+# ===========================================
+# 
+# INSTRUCCIONES:
+# 1. Crea un archivo llamado .env.local en la raíz del proyecto
+# 2. Copia el contenido de abajo al archivo .env.local
+# 3. Completa con tus credenciales reales
+# 4. NUNCA subas .env.local al repositorio
+# 5. Para producción, configura estas variables en Vercel Dashboard
+
+# ===========================================
+# CONTENIDO PARA .env.local - CONFIGURACIÓN ZOHO
+# ===========================================
+
+SMTP_HOST=smtp.zoho.com
+SMTP_PORT=587
+SMTP_USER=ventas@solsombratoldos.com
+SMTP_PASS=tu_contraseña_de_zoho
+SMTP_SECURE=false
+TO_EMAIL=ventas@solsombratoldos.com
+
+# ===========================================
+# CONFIGURACIONES ESPECÍFICAS POR PROVEEDOR
+# ===========================================
+
+# GMAIL (con contraseña de aplicación):
+# SMTP_HOST=smtp.gmail.com
+# SMTP_PORT=587
+# SMTP_USER=tu_email@gmail.com
+# SMTP_PASS=tu_contraseña_de_aplicacion
+# SMTP_SECURE=false
+
+# OUTLOOK/OFFICE 365:
+# SMTP_HOST=smtp.office365.com
+# SMTP_PORT=587
+# SMTP_USER=ventas@solsombratoldos.com
+# SMTP_PASS=tu_contraseña
+# SMTP_SECURE=false
+
+# YAHOO:
+# SMTP_HOST=smtp.mail.yahoo.com
+# SMTP_PORT=587
+# SMTP_USER=tu_email@yahoo.com
+# SMTP_PASS=tu_contraseña_de_aplicacion
+# SMTP_SECURE=false
+
+# ===========================================
+# PASOS PARA CONFIGURAR
+# ===========================================
+
+# 1. DESARROLLO LOCAL:
+#    - Crea el archivo .env.local con el contenido de arriba
+#    - Completa SMTP_USER y SMTP_PASS con tus credenciales
+#    - Ejecuta: vercel dev
+
+# 2. PRODUCCIÓN EN VERCEL:
+#    - Ve a Vercel Dashboard > Tu Proyecto > Settings > Environment Variables
+#    - Agrega cada variable (SMTP_HOST, SMTP_PORT, etc.) con su valor
+#    - Haz un nuevo deploy
+
+# 3. VERIFICAR QUE FUNCIONA:
+#    - Completa el formulario en tu sitio web
+#    - Verifica que recibas el email en ventas@solsombratoldos.com
+#    - Revisa los logs en Vercel Dashboard si hay problemas
+
+# ===========================================
+# NOTAS DE SEGURIDAD
+# ===========================================
+
+# - NUNCA subas archivos .env al repositorio
+# - Para Gmail, usa contraseña de aplicación, no tu contraseña normal
+# - Las variables de entorno en Vercel son seguras y no se exponen al cliente
+# - El archivo .env.local solo es para desarrollo local

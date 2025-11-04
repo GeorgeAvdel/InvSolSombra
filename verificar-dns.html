@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar DNS SPF</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .code { background-color: #f8f9fa; padding: 10px; border-radius: 3px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Verificar Propagación DNS SPF</h1>
+        
+        <div class="info">
+            <h3>📋 Pasos para verificar:</h3>
+            <ol>
+                <li>Ve a <a href="https://mxtoolbox.com/spf.aspx" target="_blank">MXToolbox SPF Checker</a></li>
+                <li>Ingresa tu dominio: <strong>solsombratoldos.com</strong></li>
+                <li>Haz clic en "SPF Record Lookup"</li>
+            </ol>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Lo que debes ver:</h3>
+            <p><strong>UN SOLO registro SPF</strong> que contenga:</p>
+            <div class="code">v=spf1 include:zoho.com ~all</div>
+            <p>O similar con tu configuración de Zoho.</p>
+        </div>
+
+        <div class="success">
+            <h3>✅ Si ves esto, está correcto:</h3>
+            <ul>
+                <li>Solo aparece 1 registro SPF</li>
+                <li>No hay errores de "Multiple SPF records"</li>
+                <li>El registro incluye "zoho.com"</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h3>🕐 Tiempo de espera:</h3>
+            <ul>
+                <li><strong>5-15 minutos:</strong> Propagación local</li>
+                <li><strong>1-4 horas:</strong> Zoho reconoce los cambios</li>
+                <li><strong>24 horas:</strong> Propagación completa global</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h3>🧪 Mientras esperas:</h3>
+            <p>Puedes seguir probando el formulario con el servidor de prueba:</p>
+            <div class="code">node test-server.js</div>
+            <p>Esto simula el envío pero no envía emails reales.</p>
+        </div>
+
+        <div class="success">
+            <h3>🚀 Cuando esté listo:</h3>
+            <ol>
+                <li>Verifica que el SPF esté correcto</li>
+                <li>Configura la contraseña de aplicación de Zoho</li>
+                <li>Ejecuta <code>vercel dev</code></li>
+                <li>Prueba el formulario real</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+
