@@ -30,8 +30,8 @@
         <div class="warning">
             <h3>⚠️ Lo que debes ver:</h3>
             <p><strong>UN SOLO registro SPF</strong> que contenga:</p>
-            <div class="code">v=spf1 include:zoho.com ~all</div>
-            <p>O similar con tu configuración de Zoho.</p>
+            <div class="code">v=spf1 include:tu-proveedor-email.com ~all</div>
+            <p>O la configuración indicada por tu proveedor de correo.</p>
         </div>
 
         <div class="success">
@@ -39,7 +39,7 @@
             <ul>
                 <li>Solo aparece 1 registro SPF</li>
                 <li>No hay errores de "Multiple SPF records"</li>
-                <li>El registro incluye "zoho.com"</li>
+                <li>El registro incluye el servidor de tu proveedor</li>
             </ul>
         </div>
 
@@ -47,7 +47,7 @@
             <h3>🕐 Tiempo de espera:</h3>
             <ul>
                 <li><strong>5-15 minutos:</strong> Propagación local</li>
-                <li><strong>1-4 horas:</strong> Zoho reconoce los cambios</li>
+                <li><strong>1-4 horas:</strong> El proveedor reconoce los cambios</li>
                 <li><strong>24 horas:</strong> Propagación completa global</li>
             </ul>
         </div>
@@ -63,7 +63,7 @@
             <h3>🚀 Cuando esté listo:</h3>
             <ol>
                 <li>Verifica que el SPF esté correcto</li>
-                <li>Configura la contraseña de aplicación de Zoho</li>
+                <li>Configura las credenciales/contraseña de aplicación de tu proveedor de correo</li>
                 <li>Ejecuta <code>vercel dev</code></li>
                 <li>Prueba el formulario real</li>
             </ol>
@@ -71,4 +71,5 @@
     </div>
 </body>
 </html>
+
 

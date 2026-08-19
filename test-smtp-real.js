@@ -7,10 +7,10 @@ require('dotenv').config({ path: '.env.local' });
 
 const PORT = 3000;
 
-// Configuración SMTP de Zoho
+// Configuración SMTP
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtppro.zoho.com',
-    port: parseInt(process.env.SMTP_PORT || '465'),
+    host: process.env.SMTP_HOST || '',
+    port: parseInt(process.env.SMTP_PORT || '587'),
     secure: process.env.SMTP_SECURE === 'true',
     auth: {
         user: process.env.SMTP_USER || 'ventas@solsombratoldos.com',
@@ -61,7 +61,7 @@ const server = http.createServer((req, res) => {
         req.on('end', async () => {
             try {
                 const data = JSON.parse(body);
-                console.log('📧 Enviando email real con Zoho...');
+                console.log('📧 Enviando email real...');
                 console.log('De:', data.name, '<' + data.email + '>');
                 console.log('Para:', process.env.TO_EMAIL || 'ventas@solsombratoldos.com');
                 
@@ -172,8 +172,8 @@ function escapeHtml(text) {
 
 // Verificar configuración
 console.log('🔧 Configuración SMTP:');
-console.log('Host:', process.env.SMTP_HOST || 'smtppro.zoho.com');
-console.log('Port:', process.env.SMTP_PORT || '465');
+console.log('Host:', process.env.SMTP_HOST || '');
+console.log('Port:', process.env.SMTP_PORT || '587');
 console.log('User:', process.env.SMTP_USER || 'ventas@solsombratoldos.com');
 console.log('Secure:', process.env.SMTP_SECURE || 'false');
 console.log('To:', process.env.TO_EMAIL || 'ventas@solsombratoldos.com');
@@ -181,7 +181,7 @@ console.log('');
 
 server.listen(PORT, () => {
     console.log(`🚀 Servidor con envío real ejecutándose en http://localhost:${PORT}`);
-    console.log('📧 Configurado para enviar emails reales con Zoho Mail');
+    console.log('📧 Configurado para enviar emails reales por SMTP');
     console.log('🔍 Revisa la consola para ver el estado del envío');
     console.log('\nPresiona Ctrl+C para detener el servidor');
 });

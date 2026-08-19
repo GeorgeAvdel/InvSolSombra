@@ -28,7 +28,6 @@
 - `CONFIGURACION_VERCEL.md` - Guía de configuración
 - `CONFIGURACION_EMAILJS.md` - Guía alternativa (legacy)
 - `env.example` - Ejemplo de configuración
-- `configuracion-env.txt` - Instrucciones detalladas
 
 ### Archivos del Sitio:
 - Todos los archivos HTML actualizados
@@ -38,13 +37,13 @@
 ## 🔐 CONFIGURACIÓN DE SEGURIDAD:
 
 ### Para Desarrollo Local:
-1. **Archivo `.env.local`** creado con configuración de Zoho Mail
+1. **Archivo `.env.local`** creado con configuración SMTP
 2. **Completar credenciales** en `.env.local`:
    ```env
-   SMTP_HOST=smtp.zoho.com
+   SMTP_HOST=tu_servidor_smtp
    SMTP_PORT=587
    SMTP_USER=ventas@solsombratoldos.com
-   SMTP_PASS=tu_contraseña_de_aplicación_zoho
+   SMTP_PASS=tu_contraseña_smtp
    SMTP_SECURE=false
    ```
 
