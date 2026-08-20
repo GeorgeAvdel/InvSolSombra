@@ -1,0 +1,5 @@
+Tareas:
+Las fuentes del submenu Productos debe ser color negro
+En el carrusel faltó incluir la imagen D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\images\Carrusel\Carrusel5a.jpeg, inclúyela
+En la página index.html en la sesion "Descubre otros Productos" agrega un nuevo Div o subsesion Bajo el título "Pintura electrostatica a sillas, tumbonas y mesas de jardín"
+Usa por los momentos la imagen D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\images\Sillas\sillas_16.jpg. Por los momentos no hay link a la página hija
