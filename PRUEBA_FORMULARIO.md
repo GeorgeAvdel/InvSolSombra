@@ -69,3 +69,4 @@ Para detener el servidor de prueba:
 **Formulario:** 🧪 Listo para probar
 **SMTP:** 🔄 Pendiente de configuración real
 
+

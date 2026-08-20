@@ -94,3 +94,4 @@ El submenú de "Productos" se mostraba automáticamente al cargar la página y n
 ## ✅ Estado:
 **PROBLEMA RESUELTO** - El dropdown ahora funciona correctamente en desktop y móvil.
 
+
