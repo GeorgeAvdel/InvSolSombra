@@ -494,10 +494,20 @@ q::after {
 
 .dropdown-menu a {
     display: block;
-    color: #fff;
+    color: #000 !important;
     padding: 8px 20px;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: color 0.2s, background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    color: #2563eb !important;
+}
+
+.dropdown-menu .font-bold,
+.dropdown-menu h3,
+.dropdown-menu h4 {
+    color: #000 !important;
 }
 
 .review-container {

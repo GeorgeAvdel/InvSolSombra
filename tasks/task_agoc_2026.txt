@@ -1,0 +1,3 @@
+Tareas:
+1.- Las fuentes del submenu Productos no cambiaron el color a negro, todavía están en blanco y no se ven las opciones a primera vista
+2.- Visualiza el archivo D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\tasks\DobleMenu.png En las páginas hijas se visualiza un doble menú, resuelve eso 
