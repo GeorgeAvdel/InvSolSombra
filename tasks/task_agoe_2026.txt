@@ -1,0 +1,5 @@
+Tareas:
+1) En la página index.html cambiar las dimensiones de las imágenes de manera que en un móvil se puedan visualizar de a dos albumes por fila
+Visualizar el documento D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\tasks\Imagenes.docx para entender la comparación
+2) En el header agrandar el logo de manera que ocupe todo la altura
+3) Tener en cuenta de que si no gustan los cambios, estos se puedan reversar para volver al diseño actual
