@@ -338,10 +338,12 @@ q::after {
     top: 80px;
     left: 0;
     right: 0;
-    background: #000;
+    background: #ffffff !important;
     z-index: 1000;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
   
   #nav-menu.hidden {
@@ -353,13 +355,15 @@ q::after {
     flex-direction: column;
   }
   
-  /* Asegurar que todos los elementos del menú sean visibles */
+  /* Asegurar que todos los elementos del menú sean visibles y con texto negro */
   #nav-menu:not(.hidden) > a,
-  #nav-menu:not(.hidden) > .dropdown {
+  #nav-menu:not(.hidden) > .dropdown,
+  #nav-menu:not(.hidden) > .dropdown > button {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     position: relative !important;
+    color: #000000 !important;
   }
   
   /* Específico para el enlace de Contacto en móvil */
@@ -370,6 +374,7 @@ q::after {
     position: relative !important;
     z-index: 1 !important;
     margin-top: 0.5rem;
+    color: #000000 !important;
     order: 10 !important; /* Asegurar que aparezca al final */
   }
   
