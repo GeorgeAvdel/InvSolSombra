@@ -1,0 +1,19 @@
+Tarea:
+Vas a crear un página hija basada en el modelo del archivo D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\hijas.html
+El título debe ser:"Pintura electrostática"
+Allí colocarás las imagenes de la carpeta D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\images\pintu-elestrocta
+En las sesion    <main class="min-h-screen">
+Vas a sustitur la imagen por la del archivo "D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\images\pintu-elestrocta\pe_id.jpg" alt="
+        <section class="relative h-[60vh] w-full flex items-center justify-center bg-gray-800 text-white overflow-hidden">
+
+            <div class="z-10 p-8 text-center">
+                <h1 class="text-5xl font-bold mb-4">Persiana Panel</h1>
+            </div>
+            <img src=AQUÍ COLOCAS ESA IMAGEM alt="Imagen de persiana panel" class="absolute inset-0 h-full w-full object-cover opacity-50" />
+        </section>
+
+Antes de las fotos debe ir la siguiente información:
+Es un tipo de recubrimiento  utilizado para crear acabado duro que es más resistente que la pintura convencional.
+Excelente acabado, retención de color, brillo y favorece la vida util entre otros beneficios.
+Al final debe tener el formulario de captura de datos igual a las demas páginas hijas
+Todo lo demás, igual a las demás páginas hijas
