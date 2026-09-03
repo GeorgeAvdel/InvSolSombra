@@ -1,0 +1,13 @@
+En el pie de página cambiar el fondo a color blanco y el color de la fuente a negro, al igual que los iconos de las redes facebook, instagram y whatsapp 
+a color negro
+
+En el archivo per-magic-light.html quitar la imagen en la sesion Contáctanos
+
+En el header.html reemplaza la imagen por el archivo D:\ProyectosWeb\Toldos Sol y Sombra\SolSombraToldos\images\Logo\logo_rif.jpg
+
+En el submenu productos reemplazar las siguientes opciones:
+en Persianas cambia Romano por Romana
+y en Otros 
+Sombrillas por Sombrillas cambio de lona
+Tumbonas por Tumbonas cambio de tejido
+Sillas por Sillas cambio de tejido

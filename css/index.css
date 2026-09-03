@@ -698,3 +698,41 @@ q::after {
     width: 140px !important; /* un poco más pequeña en móvil */
   }
 }
+
+/* ---------- PIE DE PÁGINA (FOOTER) - FONDO BLANCO Y TEXTO/ICONOS NEGROS ---------- */
+footer,
+footer.bg-black {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+footer h3,
+footer p,
+footer li,
+footer a,
+footer span {
+    color: #000000 !important;
+}
+
+footer a:hover {
+    color: #2563eb !important;
+}
+
+footer .border-t,
+footer .border-gray-700 {
+    border-color: #e5e7eb !important;
+}
+
+footer i,
+footer i.bi,
+footer i.fa,
+footer i.fab,
+footer .bi-facebook,
+footer .bi-instagram,
+footer .bi-whatsapp,
+footer .fa-facebook-f,
+footer .fa-instagram,
+footer .fa-whatsapp {
+    color: #000000 !important;
+}
